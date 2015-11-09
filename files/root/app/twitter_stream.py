@@ -22,12 +22,17 @@ while True:
                 text = item['text'].encode('utf-8', 'ignore')
                 name = item['user']['name'].encode('utf-8', 'ignore')
                 screen_name = item['user']['screen_name'].encode('utf-8', 'ignore')
+                id_str = item['id_str']
+                profile_image_url = item['user']['profile_image_url']
+
                 print  "%s(@%s)\t\t: %s" % (name, screen_name, text)
                 print
                 data  = {
                         'name': name,
                         'screen_name': screen_name,
-                        'text': text
+                        'text': text,
+                        'profile_image_url': profile_image_url,
+                        'id_str': id_str
                         }
                 payload = {
                         'data': data,
